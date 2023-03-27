@@ -1,7 +1,3 @@
-/*TODO List:
-1) Replace all hardcoded message lengths with #define directives
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
