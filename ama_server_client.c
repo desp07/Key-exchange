@@ -34,7 +34,8 @@ const char* getfield(char* line, int num)
 
 
 void lama_server(){
-	mpz_t p, m, n, seed, h;
+	
+    mpz_t p, m, n, seed, h;
     mpz_t curv[2], base_point[2];
     mpz_t randp[2];
     mpz_t randPs[2];
@@ -51,23 +52,22 @@ void lama_server(){
     unsigned long temp;
     int idx, cli_found=-1, bytes, point = 0, collision = 0;
     int rbytes, dstlen;
-	
-	unsigned char IDbuffer[3], cl_hmac[32], tc_buffer[100], hash_ci[32], *t1, t2[32], *temp5;
-	unsigned char cl_AID[33];
-	unsigned char  ID_hashed[32], time_hashed[32], h3_str[160], ID_mac[32], time_mac[32], Rstr_mac1[32], Rstr_mac2[32], server_time_hashed[32];
-	unsigned char hmac_res[32], hmac_str[96], Lstr_mac_0[32], *Dc_str[2], Lstr_mac_1[32];
-	unsigned char buffer_u[32], rs, temp_hmac[32];
-	unsigned char *R_str[2], *temp_mac, Rstr_hashed[32], Rtstr_hashed_0[32], Rtstr_hashed_1[32], *Ls_str_0, *Ls_str_1, *check_str, result[32], L_hashed_0[32], L_hashed_1[32], Ls_hashed_0[32], Ls_hashed_1[32];
-	unsigned char *h4_str, shared_key[32], *L_str_0, *L_str_1, k[32], *Rt_str[2], *Rcomb,  random_x, time_str_u[10] ;
-	char buffer[4];
-	hash_state md;
-	hmac_state hmac;
-	size_t size_R1, size_R2, temp_size, size;
-	long D, sd=0;
-	struct sockaddr_in saiServerAddress, saiServerAddress1;
-	unsigned long M1_time, M2_time, cl_time, dt, DT = 5;  //TODO: check whether the DT value is correct
-	struct tm result_time; //variables for safe conversion of server timestamp
-	unsigned char stime[32], time_str[10], AID[33];
+    unsigned char IDbuffer[3], cl_hmac[32], tc_buffer[100], hash_ci[32], *t1, t2[32], *temp5;
+    unsigned char cl_AID[33];
+    unsigned char  ID_hashed[32], time_hashed[32], h3_str[160], ID_mac[32], time_mac[32], Rstr_mac1[32], Rstr_mac2[32], server_time_hashed[32];
+    unsigned char hmac_res[32], hmac_str[96], Lstr_mac_0[32], *Dc_str[2], Lstr_mac_1[32];
+    unsigned char buffer_u[32], rs, temp_hmac[32];
+    unsigned char *R_str[2], *temp_mac, Rstr_hashed[32], Rtstr_hashed_0[32], Rtstr_hashed_1[32], *Ls_str_0, *Ls_str_1, *check_str, result[32], L_hashed_0[32], L_hashed_1[32], Ls_hashed_0[32], Ls_hashed_1[32];
+    unsigned char *h4_str, shared_key[32], *L_str_0, *L_str_1, k[32], *Rt_str[2], *Rcomb,  random_x, time_str_u[10] ;
+    char buffer[4];
+    hash_state md;
+    hmac_state hmac;
+    size_t size_R1, size_R2, temp_size, size;
+    long D, sd=0;
+    struct sockaddr_in saiServerAddress, saiServerAddress1;
+    unsigned long M1_time, M2_time, cl_time, dt, DT = 5;  //TODO: check whether the DT value is correct
+    struct tm result_time; //variables for safe conversion of server timestamp
+    unsigned char stime[32], time_str[10], AID[33];
 
 	
 
