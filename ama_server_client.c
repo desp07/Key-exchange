@@ -673,8 +673,6 @@ printf("Beginning authentication and listening for connections...\n");
 		size_R2 = strlen(Rcomb);
 		Rcomb[size_R2-1] = '\0';
 
-		//--------------------------diy hash list!!!! Check if this is correct---------------------------------------
-
 		hash_descriptor[idx].init(&md);//initialize the SHA3 256 hash function
 
 		printf("1 - client.ID = %s\n", init_msg.ID);
